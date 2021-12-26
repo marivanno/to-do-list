@@ -1,10 +1,9 @@
 import '../css/style.scss';
 import app from './app';
+import globalState from './GlobalState';
 
-const state = {
-  status: 'sucsess!!!, this server is working !!!!!!!@@@@@@@@@@@@22',
-};
 
 export default () => {
-  app(state);
+  app(globalState);
 };
+

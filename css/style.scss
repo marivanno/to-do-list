@@ -1,3 +1,234 @@
-  .test {
-    background-color: brown;
+@media (min-width: 100px) and (max-width: 400px) {
+  body {
+    padding: 0;
   }
+}
+
+@media (min-width: 500px) {
+  body {
+    padding: 0 3rem 0 3rem;
+  }
+}
+
+$blue:    #2196f3;
+$indigo:  #6610f2;
+$purple:  #6f42c1;
+$pink:    #e83e8c;
+$red:     #dc3545;
+$orange:  #fd7e14;
+$yellow:  #ffc107;
+$green:   #28a745;
+$teal:    #20c997;
+$cyan:    #afb6b8;
+$white:   white;
+$gray:    #aaa5a5;
+
+
+$sizes-for-margin-and-padding: (
+  0: 0px,
+  1: 10px,
+  2: 20px,
+  3: 30px,
+  4: 40px,
+  5: 50px,
+  6: 60px,
+  7: 70px,
+  8: 80px,
+  9: 90px,
+  10: 100px,
+  );
+
+  .p {
+    @each $class, $size in $sizes-for-margin-and-padding {
+        &-#{$class} {
+            padding: $size;
+        }
+    }
+  }
+
+ .px {
+  @each $class, $size in $sizes-for-margin-and-padding {
+      &-#{$class} {
+          padding-top: $size;
+          padding-bottom: $size;
+      }
+  }
+}
+
+.py {
+  @each $class, $size in $sizes-for-margin-and-padding {
+      &-#{$class} {
+          padding-right: $size;
+          padding-left: $size;
+      }
+  }
+}
+
+.m {
+  @each $class, $size in $sizes-for-margin-and-padding {
+      &-#{$class} {
+          margin: $size;
+      }
+  }
+}
+
+.mx {
+  @each $class, $size in $sizes-for-margin-and-padding {
+      &-#{$class} {
+          margin-top: $size;
+          margin-bottom: $size;
+      }
+  }
+}
+
+.my {
+  @each $class, $size in $sizes-for-margin-and-padding {
+      &-#{$class} {
+          margin-right: $size;
+          margin-left: $size;
+      }
+  }
+}
+
+  h1, h2, h3, h4, p {
+    padding: 0;
+    margin: 0;
+  };
+
+  body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: Arial;
+  }
+  
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: $blue;
+    color: $white
+  }
+  
+  main {
+    flex-grow: 1;
+  }
+  
+  footer {
+    display: flex;
+    flex-shrink: 0;
+    justify-content: center;
+    border-top: 1px solid $gray;
+  }
+
+  .search {
+    display: flex;
+    input {
+      min-width: 10rem;
+      min-height: 25px;
+      border: none;
+      background: transparent;
+      outline: none;
+      color: $white;
+      border-bottom: 1px solid #fff;
+      &::placeholder {
+        color: $white;
+        font-size: 1rem;
+      }
+    }
+    button {
+      position: relative;
+      border: none;
+      border-bottom: 1px solid #fff;
+      background: transparent;
+      cursor: pointer;
+      color: $white;
+    }
+  };
+
+  .add-new-task {
+    display: flex;
+    input {
+      width: 100%;
+      height: 25px;
+      border: none;
+      background: transparent;
+      border-bottom: 1px solid $gray;
+      outline: none;
+      color: black;
+      &::placeholder {
+        color: $gray;
+        font-size: 1rem;
+      }
+    }
+    button {
+      position: relative;
+      margin-left: 2rem;
+      bottom: 5px;
+      background: transparent;
+      height: 2rem;
+      width: 4rem;
+      box-shadow: 3px 2px 7px rgb(177, 171, 171) ;
+      border: none;
+      border-radius: 2px;
+      cursor: pointer;
+      color: black;
+      &:disabled {
+        opacity: 0.5;
+      }
+    }
+  };
+
+  .filter {
+    display: flex;
+    justify-content: space-between;
+    select {
+      border: none;
+      border-bottom: 1px solid $gray;
+      option {
+        color: blueviolet;
+      }
+    }
+  }
+
+  .task {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 0px 10px $gray;
+    border-radius: 5px;
+    label {
+      flex-grow: 0.98;
+    }
+    .custom-chekbox {
+      transform: scale(1.5);
+      margin-right: 10px;
+      cursor: pointer;
+    }
+    .input-field {
+      width: 90%;
+      height: 25px;
+      border: none;
+      background: transparent;
+      border-bottom: 1px solid $gray;
+      outline: none;
+      color: black;
+      &::placeholder {
+        color: $gray;
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .completed-task {
+    flex-grow: 0.9;
+    width: 70%;
+  }
+
+  .clear-list {
+    text-decoration: underline;
+    text-align: right;
+    cursor: pointer;
+  }
+  

@@ -5,6 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
   <body>
-    <div class="test">Hello, world 10</div>
+    <header>
+      <h3 class="px-2 py-4">ToDo</h3>
+      <div class="search px-2 py-2">
+        <input type="Search" name="searchdata" placeholder="Search"/>
+        <button>
+          <svg fill="#ffffff" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" width="20px" height="20px">
+            <path d="M 9 2 C 5.1458514 2 2 5.1458514 2 9 C 2 12.854149 5.1458514 16 9 16 C 10.747998 16 12.345009 15.348024 13.574219 14.28125 L 14 14.707031 L 14 16 L 20 22 L 22 20 L 16 14 L 14.707031 14 L 14.28125 13.574219 C 15.348024 12.345009 16 10.747998 16 9 C 16 5.1458514 12.854149 2 9 2 z M 9 4 C 11.773268 4 14 6.2267316 14 9 C 14 11.773268 11.773268 14 9 14 C 6.2267316 14 4 11.773268 4 9 C 4 6.2267316 6.2267316 4 9 4 z"/>
+          </svg>
+        </button>
+      </div>
+    </header>
+    <main>
+      <div class="add-new-task py-5 px-3">
+        <input type="text" name="newtask" placeholder="New task"/>
+        <button id="add" type="submit" disabled>ADD</button>
+      </div>
+      <div id="open-tasks"></div>
+      <div id="done-tasks"></div>
+    </main>
+    <footer>
+      <p class="px-1">© Chupakabra</p>
+    </footer>
   </body>
 </html>
