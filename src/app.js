@@ -20,6 +20,7 @@ export default (state) => {
   });
 
   elButtonAdd.addEventListener('click', () => {
+    console.log(state)
     if (!document.getElementById('open-tasks-container')) {
       const elOpenTasksContainer = document.createElement('div');
       elOpenTasksContainer.setAttribute('id', 'open-tasks-container');

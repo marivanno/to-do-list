@@ -1,4 +1,5 @@
 import render from '../render';
+import globalState from '../GlobalState';
 
 const clearList = (type) => {
   const elDiv = document.createElement('div');
@@ -6,6 +7,7 @@ const clearList = (type) => {
   elDiv.textContent = `Clear "${type}-List"`;
   elDiv.addEventListener('click', () => {
     render(`remove${type}Tasks`);
+    globalState.clearDesiredList(type);
   });
   return elDiv;
 };

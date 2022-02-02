@@ -1,8 +1,9 @@
 const getCurrentTime = () => {
   const date = new Date();
-  return date.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
+  const dateNow = Date.now();
+  const timeToString = date.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
+  return { dateNow, timeToString };
 };
 
-const something = () => console.log('bober');
 
-export { getCurrentTime, something };
+export default getCurrentTime;

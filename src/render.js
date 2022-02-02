@@ -51,6 +51,21 @@ const render = (action, data = null) => {
       elInput.selectionStart = elInput.value.length;
       break;
     }
+
+    case 'renderFilterOpenContainer': {
+      const elOpenTaskListContainer = document.querySelector('#open-tasks-container');
+      elOpenTaskListContainer.innerHTML = '';
+      elOpenTaskListContainer.append(...data);
+      break;
+    }
+
+    case 'renderFilterDoneContainer': {
+      const elDoneTaskListContainer = document.querySelector('#done-tasks-container');
+      elDoneTaskListContainer.innerHTML = '';
+      elDoneTaskListContainer.append(...data);
+      break;
+    }
+
     default: {
       throw new Error('undefined action');
     }
