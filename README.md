@@ -9,5 +9,5 @@ The practice task is a simple Todo List application written without using librar
 1. Each entry in the lists must have two statuses: completed or open 
 
 
-![Example](./src/images/1.jpg)
+![Example](src/img/1.jpg)
 
