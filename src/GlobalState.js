@@ -8,6 +8,14 @@ class GlobalState {
     return this.uniqId;
   }
 
+  getOpenedTasks() {
+    return this.taskList.filter((item) => !item.chekbox);
+  }
+
+  getDoneTasks() {
+    return this.taskList.filter((item) => item.chekbox);
+  }
+
   nextId() {
     this.uniqId += 1;
   }
@@ -20,6 +28,11 @@ class GlobalState {
     const openTasks = this.taskList.filter((item) => !item.chekbox);
     const node = openTasks.map((item) => item.buildTask());
     return node;
+  }
+
+  removeTask(id) {
+    console.log(id)
+    this.taskList = this.taskList.filter((item) => item.id !== id);
   }
 
   createTasksListSortedByDate(type) {

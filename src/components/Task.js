@@ -43,6 +43,20 @@ class Task {
       </div>`;
       const elInput = elDiv.querySelector('.input-field');
       const elChekbox = elDiv.querySelector('.custom-chekbox');
+      const elButtonRemove = elDiv.querySelector('.remove');
+
+      elButtonRemove.addEventListener('click', (e) => {
+        const elTask = e.currentTarget.parentNode;
+        const taskId = Number(elTask.getAttribute('id').split('-').slice(1));
+        elTask.remove();
+        globalState.removeTask(taskId);
+        if (globalState.getDoneTasks().length === 0) {
+          render('removeDoneTasks');
+        }
+        if (globalState.getOpenedTasks().length === 0) {
+          render('removeOpenTasks');
+        }
+      });
 
       elInput.addEventListener('input', ({ target }) => {
         this.value = target.value;
@@ -88,10 +102,24 @@ class Task {
 
       const elChekbox = elDiv.querySelector('.custom-chekbox');
       const elText = elDiv.querySelector(`#text-task-${this.id}`);
+      const elButtonRemove = elDiv.querySelector('.remove');
 
       elText.addEventListener('dblclick', () => {
         this.type = 'input';
         render('renderdblclick', this);
+      });
+
+      elButtonRemove.addEventListener('click', (e) => {
+        const elTask = e.currentTarget.parentNode;
+        const taskId = Number(elTask.getAttribute('id').split('-').slice(1));
+        elTask.remove();
+        globalState.removeTask(taskId);
+        if (globalState.getDoneTasks().length === 0) {
+          render('removeDoneTasks');
+        }
+        if (globalState.getOpenedTasks().length === 0) {
+          render('removeOpenTasks');
+        }
       });
       elChekbox.addEventListener('click', () => {
         this.chekbox = !this.chekbox;
