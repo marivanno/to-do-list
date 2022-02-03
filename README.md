@@ -10,6 +10,12 @@ The practice task is a simple Todo List application written without using librar
 1. Each entry in the lists have creation time and done time 
 1. Each list have sort by records, creation time and done time
 
+## How to install
+
+1. Download this repository 
+1. to install - npm i
+1. to run on local machin - npm start
+
 
 ![Example](src/img/img.jpg)
 
