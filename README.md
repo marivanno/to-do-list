@@ -11,5 +11,5 @@ The practice task is a simple Todo List application written without using librar
 1. Each list have sort by records, creation time and done time
 
 
-![Example](src/img/1.jpg)
+![Example](src/img/img.jpg)
 
